@@ -17,16 +17,8 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
 
-val autoVersion = project.property(
-    if (project.hasProperty("AUTO_VERSION")) {
-        "AUTO_VERSION"
-    } else {
-        "LIBRARY_VERSION"
-    },
-) as String
-
 group = "${properties["GROUP"]}"
-version = autoVersion
+version = "${properties["VERSION"]}"
 
 buildscript {
     repositories {
@@ -196,11 +188,10 @@ publishing {
 }
 
 kmmbridge {
-    frameworkName.set(project.name)
+    frameworkName.set("KmpLog")
     mavenPublishArtifacts()
     spm(
         spmDirectory = "./",
         useCustomPackageFile = true
     )
-    manualVersions()
 }
