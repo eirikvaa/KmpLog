@@ -31,6 +31,5 @@ jobs:
       runsOn: "macOS-14"
       jvmVersion: 17
       versionBaseProperty: LIBRARY_VERSION
-      publishTask: kmmBridgePublish
     secrets:
       gradle_params: -DGITHUB_ACTOR=${{ secrets.GITHUB_ACTOR }} -DGITHUB_TOKEN=${{ secrets.GITHUB_TOKEN }}

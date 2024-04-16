@@ -22,7 +22,7 @@ val autoVersion = project.property(
         "AUTO_VERSION"
     } else {
         "LIBRARY_VERSION"
-    }
+    },
 ) as String
 
 group = "${properties["GROUP"]}"
@@ -198,7 +198,7 @@ publishing {
 kmmbridge {
     frameworkName.set(project.name)
     mavenPublishArtifacts()
-    spm {
+    spm(useCustomPackageFile = true) {
         iOS("15")
     }
     manualVersions()
