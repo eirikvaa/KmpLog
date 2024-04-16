@@ -198,8 +198,9 @@ publishing {
 kmmbridge {
     frameworkName.set(project.name)
     mavenPublishArtifacts()
-    spm(useCustomPackageFile = true) {
-        iOS("15")
-    }
+    spm(
+        spmDirectory = "./",
+        useCustomPackageFile = true
+    )
     manualVersions()
 }
