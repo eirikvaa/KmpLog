@@ -200,8 +200,5 @@ publishing {
 kmmbridge {
     frameworkName.set(iosFrameworkName)
     mavenPublishArtifacts()
-    spm(
-        spmDirectory = "./",
-        useCustomPackageFile = true
-    )
+    spm()
 }
