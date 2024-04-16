@@ -28,6 +28,8 @@ val autoVersion = project.property(
 group = "${properties["GROUP"]}"
 version = autoVersion
 
+val iosFrameworkName = "${properties["IOS_FRAMEWORK_NAME"]}"
+
 buildscript {
     repositories {
         gradlePluginPortal()
@@ -114,7 +116,7 @@ kotlin {
             linkerOpts += "-ld64"
         }
         it.binaries.framework {
-            baseName = rootProject.name
+            baseName = iosFrameworkName
         }
     }
 
@@ -196,7 +198,7 @@ publishing {
 }
 
 kmmbridge {
-    frameworkName.set("KmpLog")
+    frameworkName.set(iosFrameworkName)
     mavenPublishArtifacts()
     spm(
         spmDirectory = "./",
