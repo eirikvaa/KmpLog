@@ -32,4 +32,7 @@ jobs:
       jvmVersion: 17
       versionBaseProperty: LIBRARY_VERSION
     secrets:
-      gradle_params: -DGITHUB_ACTOR=${{ secrets.GITHUB_ACTOR }} -DGITHUB_TOKEN=${{ secrets.GITHUB_TOKEN }}
+      gradle_params: |
+        -PGITHUB_PUBLISH_USER=${{ secrets.GITHUB_ACTOR }}
+        -PGITHUB_PUBLISH_TOKEN=${{ secrets.GITHUB_TOKEN }}
+        -PGITHUB_REPO=https://github.com/Airthings/KmpLog.git
