@@ -200,7 +200,13 @@ android {
 kmmbridge {
     frameworkName.set(iosFrameworkName)
     mavenPublishArtifacts()
-    spm(spmDirectory = "./")
+    spm(
+        spmDirectory = "./",
+        swiftToolVersion = "5.9",
+        targetPlatforms = {
+            iOS { v("15.0") }
+        }
+    )
 }
 
 addGithubPackagesRepository()
